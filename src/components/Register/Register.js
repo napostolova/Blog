@@ -1,34 +1,47 @@
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 import styles from './Register.module.css';
 import { register } from "../../services/userServices";
 
 function Register () {
+    const history = useHistory();
 
 const onRegisterHandler = (e) => {
     e.preventDefault()
-
+    
+    const username = e.target.username.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const repassword = e.target.repassword.value;
+    // const repassword = e.target.repassword.value;
 
-    const data = {email, password, repassword};
+    const data = {username, email, password};
 
     register(data)
     .then(res => res.json())
     .then(data => {
+        
+        if(data.message) {
+            return new Error();
+        }
+        history.push('/');
+         localStorage.setItem('token', data.accessToken);
+         localStorage.setItem('_id', data._id);
+       localStorage.setItem('username', data.username);
         console.log(data);
     })
-    .catch(error=> console.log(error))
+    .catch((error) => console.log(error))
 
 }
 
     return (
         <section className={styles['register-page']}>
             <form id="registerForm"  className={styles['register-form']}onSubmit={onRegisterHandler}>
-            <div className="container"  className={styles['register-form']}>
+            <div className={styles['register-form']}>
                 <div className="brand-logo"></div>
                 <h1>Register</h1>
+
+                <label htmlFor="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Maria" />
 
                 <label htmlFor="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="maria@email.com" />

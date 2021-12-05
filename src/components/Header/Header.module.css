@@ -1,8 +1,38 @@
-.navigation-list {
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    color: green;
+    list-style-type: none;
+    text-decoration: none;
+}
+.navbar .navigation-list {
     display: flex;
     flex-direction: row;
 }
-.listItem {
+.nav-item  {
     list-style-type: none;
     text-decoration: none;
+}
+.nav-item {
+	margin: 0px 15px;
+}
+.nav-link {
+    text-decoration: none;
+	font-size: 15px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #1e1e1e;
+    transition: all 0.3s;
+    padding: 15px 0px;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: rgb(35, 99, 35);
 }
