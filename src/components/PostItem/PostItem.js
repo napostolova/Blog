@@ -1,3 +1,4 @@
+import styles from './PostItem.module.css';
 const { Link } = require("react-router-dom");
 
 function PostItem({
@@ -8,8 +9,8 @@ function PostItem({
 
         <section className="catalog-page">
             <h1>{post.title}</h1>
-            <article className="container-image">
-              <img src={post.imageUrl} alt="" />
+            <article className={styles['container-image']}>
+              <img className={styles['image']}src={post.imageUrl} alt="" />
             </article>
          <Link to={`/details/${post._id}`}>Read more</Link>
         </section>

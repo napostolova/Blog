@@ -17,6 +17,17 @@ export function getAll() {
     .then(res => res.json());
 }
 
+export function getMyPostsById(id, token) {
+    return fetch(`${apiUrl}/api/posts/my-posts/${id}`, {
+        headers: {
+            'X-Authorization': token
+            
+        }
+
+    })
+    .then(res => res.json());
+}
+
 export function getById(id) {
     return fetch(`${apiUrl}/api/posts/${id}`)
     .then(res => res.json());

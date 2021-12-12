@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const {    getAll, create, update, remove } = require('../services/post');
+const {    getAll, getMyItemsById, create, update, remove } = require('../services/post');
 const {isAuth, isOwner } =require('../middlewares/guards');
 const { parseError } = require('../utils');
 const preload = require('../middlewares/preload');
@@ -34,6 +34,14 @@ router.get('/:id', preload(), async (req, res) => {
       
       res.json(item);
 })
+
+router.get(`/my-posts/:id`, isAuth(), async(req, res) => {
+     const id = req.params.id;
+    const data = await getMyItemsById(id)
+    res.json(data);
+
+}) 
+
 router.put('/:id', isAuth(), preload(), isOwner(), async (req, res) => {
     const updatedData = {
         title: req.body.title,

@@ -1,3 +1,5 @@
+import styles from './PostDetails.module.css';
+
 import { useState, useEffect } from "react";
 import { getById } from "../../services/postServices";
 
@@ -20,14 +22,14 @@ function PostDetails() {
 
         <section className="post-details">
             <h1>{post.title}</h1>
-            <article>
-              <img className="img" src={post.imageUrl} alt=""/>
+            <article  className={styles['container-image']}>
+              <img className={styles['image']} src={post.imageUrl} alt=""/>
             </article>
             <article>
               {post.description}
             </article>
             <Link to={`/edit/${post._id}`} >Edit</Link>
-            <Link >Delete</Link>
+            <button >Delete</button>
           </section>
 
     )

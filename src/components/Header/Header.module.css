@@ -36,3 +36,7 @@
     cursor: pointer;
     color: rgb(35, 99, 35);
 }
+
+.welcome-msg {
+    font-style: italic;
+}

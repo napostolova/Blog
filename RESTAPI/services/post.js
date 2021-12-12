@@ -16,6 +16,11 @@ async function getOneById(id) {
     
 }
 
+async function getMyItemsById(id) {
+    return  Post.find({ownerId: id});
+    
+}
+
 async function update(original, updated) {
     Object.assign(original, updated);
     await original.save();
@@ -29,6 +34,7 @@ async function remove(id) {
 
 module.exports = {
     getAll,
+    getMyItemsById,
     getOneById,
     create,
     update,
