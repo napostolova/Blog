@@ -1,37 +1,30 @@
 import {Link, useHistory } from 'react-router-dom';
 
+import { useAuthContext } from '../../contexts/AuthContext';
 import styles from './Login.module.css';
-import { login } from "../../services/userServices";
-import { useState } from 'react';
+import * as userService from "../../services/userServices";
 
 
 function Login () {
- 
+ const { login } = useAuthContext();
     const history = useHistory();
     
 
 const onLoginHandler = (e) => {
     e.preventDefault()
 
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-  
-    const data = {email, password};
+    let formData = new FormData(e.currentTarget);
 
-    login(data)
-    .then(res => res.json())
-    .then(data => {
-        if(data.message) {
-            return new Error();
-        }
-        console.log(data);
-         localStorage.setItem('token', data.accessToken);
-         localStorage.setItem('_id', data._id);
-         localStorage.setItem('username', data.username);
+    let email = formData.get('email')
+    let password = formData.get('password');
+  
+
+    userService.login(email, password)
+       .then((data) => {
+         login(data);
         history.push('/');
-    
     })
-    .catch(error=> console.log(error))
+        .catch(error=> console.log(error))
 
 }
 

@@ -11,22 +11,40 @@ export function register(data) {
     
 }
 
-export function login(data) {
-    return fetch(`${apiUrl}/api/user/login`, {
+export const login = async (email, password) => {
+    let response = await fetch(`${apiUrl}/api/user/login`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'           
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({email, password})
     });
-    
+
+    let result = await response.json();
+
+    if(response.ok) {
+        return result;
+    } else {
+        throw result.message;
+    }
+     
 }
 
-export function logout(token) {
+export const logout = (token) => {
     return fetch(`${apiUrl}/api/user/logout`, {
         headers: {
             'X-Authorization': token
         }
     });
-    
+  
 }
+
+export const getUser = () => {
+    let username = localStorage.getItem('username');
+
+    return username;
+};
+
+export const isAuth = () => {
+    return Boolean(getUser());
+};
