@@ -45,3 +45,14 @@ export function update(id, data, token) {
     });
     
 }
+
+export function deletePost(id, token) {
+    return fetch(`${apiUrl}/api/posts/${id}`, {
+        method: 'delete',
+        headers: {
+            'X-Authorization': token
+        }
+
+    })
+    
+}

@@ -1,17 +1,33 @@
-import { useAuthContext } from '../../contexts/AuthContext';
-import usePostState from '../../hooks/usePostState';
-import styles from './PostDetails.module.css';
+import {useHistory, useRouteMatch, Link} from 'react-router-dom';
 
-const { useRouteMatch, Link } = require("react-router-dom");
+import usePostState from '../../hooks/usePostState' ;
+
+import { useAuthContext } from '../../contexts/AuthContext';
+import styles from './PostDetails.module.css';
+import { deletePost} from '../../services/postServices';
+
 
 function PostDetails() { 
+  const history = useHistory();
   const {params} = useRouteMatch();
  
   const [post, setPost] = usePostState(params.id);
 
   const {user} = useAuthContext();
 
-  let isOwner = user._id == post.ownerId;
+  let isOwner = user._id === post.ownerId;
+
+
+  const onDeleteHandler = () => {
+      alert('Are you sure you want to delete this post?');
+    
+     deletePost(post._id, user.accessToken)
+     .then(()=>{
+       history.push('/');
+     })
+    
+    .catch(error=> console.log(error))
+       }
        
      return (
 
@@ -24,11 +40,11 @@ function PostDetails() {
             <article>
               {post.description}
             </article>
-            
+
             { isOwner 
                   ?  <>
                    <Link to={`/edit/${post._id}`} >Edit</Link>
-                    <button >Delete</button>
+                    <button onClick={onDeleteHandler} >Delete</button>
                     </>
                   : <>
                     </>
