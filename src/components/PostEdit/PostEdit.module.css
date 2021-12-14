@@ -1,11 +1,11 @@
-.register-page {
+.edit-page {
     display: flex;
     background: green;
     width: 60%;
     margin: 50px auto;
 }
 
-.register-form {
+.edit-form {
     display: flex;
     flex-direction: column;
     margin: 50px auto;

@@ -3,21 +3,27 @@ import {useHistory} from 'react-router-dom';
 import styles from './PostCreate.module.css';
 import { create } from "../../services/postServices";
 
+import { useAuthContext } from '../../contexts/AuthContext';
+
 function PostCreate () {
     const history = useHistory();
 
-    const token = localStorage.getItem('token');
+    const {user } = useAuthContext();
+    
 
 const onCreateHandler = (e) => {
     e.preventDefault()
-    
-    const title = e.target.title.value;
-    const description = e.target.description.value;
-    const imageUrl = e.target.imageUrl.value;
-    
-    const data = {title, description, imageUrl};
 
-    create(data, token)
+    let formData = new FormData(e.currentTarget);
+
+    const title = formData.get('title');
+    const description = formData.get('description');
+    const imageUrl = formData.get('imageUrl'); 
+    const region = formData.get('region'); 
+    
+    const data = {title, description, imageUrl, region};
+
+    create(data, user.accessToken)
     .then(res => res.json())
     .then(data => {
         if(data.message) {
@@ -49,7 +55,17 @@ const onCreateHandler = (e) => {
                 <label htmlFor="imageUrl">Image:</label>
                 <input type="text" name="imageUrl" id="imageUrl" />
 
-                <input className={styles['submit']} type="submit" value="create" />
+                <label htmlFor="region">Select region:</label>
+                <select  name="region" id="region" >
+                  <option value="asia">Asia</option>
+                  <option value="africa">Africa</option>
+                  <option value="australia">Australia</option>
+                  <option value="europe">Europe</option>
+                  <option value="north america">North America</option>
+                  <option value="south america">South America</option>
+                </select>
+                              
+                <input className={styles['submit']} type="submit" value="Create your post" />
 
             </div>
             </form>

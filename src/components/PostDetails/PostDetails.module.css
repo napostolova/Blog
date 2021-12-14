@@ -6,3 +6,8 @@
    .image {
        max-width: 100%;
    }
+   .region {
+    font-style: italic;
+    text-transform: capitalize ;
+ 
+  }

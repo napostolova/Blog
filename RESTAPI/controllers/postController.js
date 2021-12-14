@@ -16,6 +16,7 @@ router.post('/', isAuth(), async (req, res) => {
         title: req.body.title,
         description: req.body.description,
         imageUrl: req.body.imageUrl,
+        region: req.body.region,
         ownerId: req.user._id
     }
     try {
@@ -47,6 +48,7 @@ router.put('/:id', isAuth(), preload(), isOwner(), async (req, res) => {
         title: req.body.title,
         description: req.body.description,
         imageUrl: req.body.imageUrl,  
+        region: req.body.region,  
      }
     try {
         const result = await update(req.data, updatedData);

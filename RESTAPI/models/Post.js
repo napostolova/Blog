@@ -15,7 +15,11 @@ const postSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required:[ true, 'Image is required']
-    },    
+    },   
+    region: {
+        type: String,
+        required:[ true, 'Region is required']
+    },  
     likes: [{
         type: ObjectId,
         ref: "User"

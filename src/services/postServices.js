@@ -33,8 +33,8 @@ export function getById(id) {
     .then(res => res.json());
 }
 
-export function update(data, token) {
-    return fetch(`${apiUrl}/api/posts`, {
+export function update(id, data, token) {
+    return fetch(`${apiUrl}/api/posts/${id}`, {
         method: 'put',
         headers: {
             'Content-Type': 'application/json',
