@@ -4,7 +4,7 @@ import usePostState from '../../hooks/usePostState' ;
 
 import { useAuthContext } from '../../contexts/AuthContext';
 import styles from './PostDetails.module.css';
-import { deletePost} from '../../services/postServices';
+import { deletePost, like} from '../../services/postServices';
 
 
 function PostDetails() { 
@@ -17,6 +17,9 @@ function PostDetails() {
 
   let isOwner = user._id === post.ownerId;
 
+  let isLiked = false;
+
+
 
   const onDeleteHandler = () => {
       alert('Are you sure you want to delete this post?');
@@ -28,6 +31,24 @@ function PostDetails() {
     
     .catch(error=> console.log(error))
        }
+
+  
+ const likeHandler = () => {
+   
+  if (post.likes.includes(user._id)) {
+   isLiked = true;
+    console.log('You already liked this post');
+    return;
+  }
+
+   like(post._id, user.accessToken)
+   .then(()=> { 
+     setPost(post => ({...post, likes: [...post.likes, user._id]}));
+   
+   })
+   .catch(error => console.log(error))
+
+ }
        
      return (
 
@@ -40,6 +61,7 @@ function PostDetails() {
             <article>
               {post.description}
             </article>
+            <span>{post.likes?.length} likes</span>
 
             { isOwner 
                   ?  <>
@@ -47,6 +69,7 @@ function PostDetails() {
                     <button onClick={onDeleteHandler} >Delete</button>
                     </>
                   : <>
+                  <button onClick={likeHandler}>Like</button>
                     </>
              }
            

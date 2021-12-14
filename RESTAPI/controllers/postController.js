@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const {    getAll, getMyItemsById, create, update, remove } = require('../services/post');
+const {    getAll, getMyItemsById, create, update, remove, like } = require('../services/post');
 const {isAuth, isOwner } =require('../middlewares/guards');
 const { parseError } = require('../utils');
 const preload = require('../middlewares/preload');
@@ -61,6 +61,20 @@ router.put('/:id', isAuth(), preload(), isOwner(), async (req, res) => {
     }
 })
 
+router.post('/:id', isAuth(), preload(), async( req, res) => {
+      
+    const { id: postId} = req.params;
+    const {_id: userId} = req.user;
+    try {
+      const result = await like(postId, userId);
+        res.status(200).json(result);
+  
+    } catch(error) {
+        const message = parseError(error);
+        res.status(error.status || 400).json({message});
+    }
+
+})
 
 router.delete('/:id', isAuth(), preload(), isOwner(), async (req, res) => {
     try {
@@ -72,5 +86,7 @@ router.delete('/:id', isAuth(), preload(), isOwner(), async (req, res) => {
 
     }
 })
+
+
 
 module.exports = router;

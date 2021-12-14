@@ -28,6 +28,11 @@ async function update(original, updated) {
     return original;
 
 }
+
+async function like(postId, userId) {
+     await Post.updateOne({_id: postId},  { $addToSet: { likes: userId } }, { new: true })
+}
+
 async function remove(id) {
     return  Post.findByIdAndDelete(id);
 }
@@ -38,6 +43,7 @@ module.exports = {
     getOneById,
     create,
     update,
+    like,
     remove
 
 };

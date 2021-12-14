@@ -29,7 +29,7 @@ export function getMyPostsById(id, token) {
 }
 
 export function getById(id) {
-    return fetch(`${apiUrl}/api/posts/${id}`)
+     return fetch(`${apiUrl}/api/posts/${id}`)
     .then(res => res.json());
 }
 
@@ -43,6 +43,16 @@ export function update(id, data, token) {
         },
         body: JSON.stringify(data)
     });
+    
+}
+
+export function like(id, token) {
+    return fetch(`${apiUrl}/api/posts/${id}`, {
+        method: 'post',
+           headers: {  
+              'X-Authorization': token
+        },
+            });
     
 }
 
