@@ -13,6 +13,7 @@ import PostDetails from './components/PostDetails/PostDetails';
 import PostEdit from './components/PostEdit/PostEdit';
 import MyPosts from './components/MyPosts/MyPosts';
 import Logout from './components/Logout/Logout';
+import Guard from './hoc/guard';
 
 function App() { 
   
@@ -28,15 +29,12 @@ function App() {
           <Route path="/login" component={Login}/>
           <Route path="/logout" component={Logout}/>
           <Route path="/details/:id" component={PostDetails}/>
-          <Route path="/create" component={PostCreate}/>
-          <Route path="/edit/:id" component={PostEdit}/>
-          <Route path="/my-posts" component={MyPosts}/>
-                 
+          <Route path="/create" component={Guard(PostCreate)}/>
+          <Route path="/edit/:id" component={Guard(PostEdit)}/>
+          <Route path="/my-posts" component={Guard(MyPosts)}/>
          </Switch>
 
-
-         <Footer/>
-
+       <Footer/>
     </div>
  </AuthProvider>
  
