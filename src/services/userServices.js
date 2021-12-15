@@ -1,13 +1,21 @@
 const apiUrl = 'http://localhost:4000';
 
-export function register(data) {
-    return fetch(`${apiUrl}/api/user/register`, {
+export const register = async (data) => {
+    let response = await fetch(`${apiUrl}/api/user/register`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'           
         },
         body: JSON.stringify(data)
     });
+    
+    let result = await response.json();
+
+    if(response.ok) {
+        return result;
+    } else {
+        throw result.message;
+    }
     
 }
 

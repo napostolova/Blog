@@ -31,9 +31,7 @@ const onCreateHandler = (e) => {
             console.log(data.message);
             return new Error();
         }
-        history.push('/');
-        console.log(data);
-       
+        history.push('/');      
     })
     .catch(error=> console.log(error))
 

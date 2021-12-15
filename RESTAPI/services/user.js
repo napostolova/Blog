@@ -11,8 +11,8 @@ async function register(username, email, password) {
     });
 
     if (existing) {
-        const error = new Error('User with this email already exists in the database');
-        error.status(409);
+        const error = new Error('User with this email is already registered');
+       
         throw error;
     }
 
@@ -24,7 +24,7 @@ async function register(username, email, password) {
         email,
         password: hashedPassword
     });
-console.log(user);
+
     await user.save();
 
     return { 
@@ -40,16 +40,16 @@ async function login(email, password) {
 
     if (!user) {
         const error = new Error('Incorrect email or password');
-        error.status(401);
+    
         throw error;
     }
-console.log(password);
-console.log(user.password);
+
+
     const match = await bcrypt.compare(password, user.password);
 
     if (!match) {
         const error = new Error('Incorrect email or password');
-        error.status(401);
+   
         throw error;
     }
 

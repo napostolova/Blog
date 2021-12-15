@@ -5,8 +5,7 @@ export function create(data, token) {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
-            'X-Authorization': token
-            
+            'X-Authorization': token 
         },
         body: JSON.stringify(data)
     });
@@ -21,9 +20,7 @@ export function getMyPostsById(id, token) {
     return fetch(`${apiUrl}/api/posts/my-posts/${id}`, {
         headers: {
             'X-Authorization': token
-            
         }
-
     })
     .then(res => res.json());
 }
@@ -38,8 +35,7 @@ export function update(id, data, token) {
         method: 'put',
         headers: {
             'Content-Type': 'application/json',
-            'X-Authorization': token
-            
+            'X-Authorization': token      
         },
         body: JSON.stringify(data)
     });
@@ -52,7 +48,7 @@ export function like(id, token) {
            headers: {  
               'X-Authorization': token
         },
-            });
+    });
     
 }
 
@@ -62,7 +58,5 @@ export function deletePost(id, token) {
         headers: {
             'X-Authorization': token
         }
-
-    })
-    
+    });
 }

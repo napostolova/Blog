@@ -11,7 +11,8 @@ function Posts() {
         getAll()
         .then( result => {
             setPosts(result)
-        });
+        })
+        .catch(error => console.log(error))
     }, [])
     
     return (

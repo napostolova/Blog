@@ -20,8 +20,6 @@ function PostEdit () {
 
 const onEditHandler = (e) => {
     e.preventDefault()
-    
-
 
      let formData = new FormData(e.currentTarget);
 

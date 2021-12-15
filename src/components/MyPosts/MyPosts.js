@@ -15,10 +15,10 @@ useEffect(()=> {
         .then(result => {
             setPosts(result)
         })
-        .catch() 
+        .catch(error => console.log(error)) 
              
 
-},[])
+},[user._id, user.accessToken])
 
     return (
         <section className="my-posts">
