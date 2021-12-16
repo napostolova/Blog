@@ -1,22 +1,58 @@
 .create-page {
     display: flex;
-    background: green;
-    width: 60%;
+    width: 30vw;
+    height: 80vh;
     margin: 50px auto;
+    border: 1px solid gray;
+    border-radius: 20px;
 }
 
 .create-form {
     display: flex;
+    width: 25vw;
+    height: 75vh;
     flex-direction: column;
     margin: 50px auto;
 }
 
 .submit{
-     margin:  40px;
-     padding: 10px;
      border-radius: 5px;
+     margin: 25px 5px;
+     padding: 15px 0px;
+     border-radius: 10px;
+     font-size: 18px;
+     background-color:green;
+     color: white;
+     letter-spacing: 1px;
+     text-align: center;
+     font-weight: 600;
+     text-transform: uppercase;
 
 }
 .submit:hover {
     cursor: pointer;
+}
+.label {
+    text-align: left;
+}
+.inputFields {
+    margin: 5px 0 15px 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+
+.error {
+    font-size: 14px;
+    color: rgb(248, 27, 27);
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.invalid-form {
+    font-size: 18px;
+    color: rgb(248, 27, 27);
+    font-weight: 600;
 }

@@ -24,7 +24,9 @@
     background-color:green;
     color: white;
     letter-spacing: 1px;
-
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .submit:hover {
@@ -59,4 +61,5 @@
 .link{
  color: darkgreen;
  font-weight: 600;
+ text-decoration: none;
 }

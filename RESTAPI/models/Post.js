@@ -5,7 +5,7 @@ const postSchema = new mongoose.Schema({
     title: {
         type: String,
         required:[ true, 'Title is required'],
-        minLength: [5 , 'Title must be at least 5 symbols']
+        minLength: [10 , 'Title must be at least 5 symbols']
     },
      description: {
         type: String,
@@ -14,7 +14,13 @@ const postSchema = new mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        required:[ true, 'Image is required']
+        required:[ true, 'Image is required'],
+        validate: {
+            validator: function (v) {
+                return /^http(|s):\/\//.test(v);
+            },
+            message: props => `Image address must begin with http(s)://`
+        },
     },   
     region: {
         type: String,

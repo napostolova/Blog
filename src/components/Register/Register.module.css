@@ -27,11 +27,14 @@
 .submit{
     margin: 40px;
     padding:  15px 100px;
-    border-radius: 10px;   
+    border-radius: 10px;
     font-size: 18px;
     background-color:green;
     color: white;
     letter-spacing: 1px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 .submit:hover {
     cursor: pointer;
@@ -55,4 +58,5 @@
 .link{   
     color: darkgreen;
     font-weight: 600;
+    text-decoration: none;
    }

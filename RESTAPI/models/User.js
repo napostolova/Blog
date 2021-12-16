@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 
-
 const { ObjectId } = mongoose.Schema.Types;
 
 const userSchema = new mongoose.Schema({
@@ -15,7 +14,7 @@ const userSchema = new mongoose.Schema({
             validator: function (v) {
                 return /[a-zA-Z0-9]+/g.test(v);
             },
-            message: props => `${props.value} must contains only latin letters and digits!`
+            message: props => `${props.value} must contain only latin letters and digits!`
         },
     },
     email: {
@@ -31,7 +30,7 @@ const userSchema = new mongoose.Schema({
             validator: function (v) {
                 return /[a-zA-Z0-9]+/g.test(v);
             },
-            message: props => `${props.value} must contains only latin letters and digits!`
+            message: props => `${props.value} must contain only latin letters and digits!`
         },
     },
     posts: [{
@@ -41,29 +40,6 @@ const userSchema = new mongoose.Schema({
 
 }, { timestamps: { createdAt: 'created_at' } });
 
-// userSchema.methods = {
-//     matchPassword: function (password) {
-//         return bcrypt.compare(password, this.password);
-//     }
-// }
 
-// userSchema.pre('save', function (next) {
-//     if (this.isModified('password')) {
-//         bcrypt.genSalt(saltRounds, (err, salt) => {
-//             if (err) {
-//                 next(err);
-//             }
-//             bcrypt.hash(this.password, salt, (err, hash) => {
-//                 if (err) {
-//                     next(err);
-//                 }
-//                 this.password = hash;
-//                 next();
-//             })
-//         })
-//         return;
-//     }
-//     next();
-// });
 
 module.exports = mongoose.model('User', userSchema);

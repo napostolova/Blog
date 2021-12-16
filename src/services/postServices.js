@@ -1,7 +1,7 @@
 const apiUrl = 'http://localhost:4000';
 
-export function create(data, token) {
-    return fetch(`${apiUrl}/api/posts`, {
+export async function create(data, token) {
+    let response = await fetch(`${apiUrl}/api/posts`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
@@ -9,6 +9,14 @@ export function create(data, token) {
         },
         body: JSON.stringify(data)
     });
+      
+    let result = await response.json();
+
+    if(response.ok) {
+        return result;
+    } else {
+        throw result.message;
+    }
     
 }
 export function getAll() {
