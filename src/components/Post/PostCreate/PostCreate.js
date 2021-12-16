@@ -2,9 +2,9 @@ import {useHistory} from 'react-router-dom';
 import { useState } from 'react';
 
 import styles from './PostCreate.module.css';
-import { create } from "../../services/postServices";
-import { useAuthContext } from '../../contexts/AuthContext';
-import {patternImage, validatePost} from '../../utils/validationHandler';
+import { create } from "../../../services/postServices";
+import { useAuthContext } from '../../../contexts/AuthContext';
+import {patternImage, validatePost} from '../../../utils/validationHandler';
 
 function PostCreate () {
     const history = useHistory();

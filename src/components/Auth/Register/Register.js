@@ -2,9 +2,9 @@ import {Link, useHistory} from 'react-router-dom';
 import { useState } from 'react';
 
 import styles from './Register.module.css';
-import { register } from "../../services/userServices";
-import { useAuthContext } from '../../contexts/AuthContext';
-import {validateUser} from '../../utils/validationHandler';
+import { register } from "../../../services/userServices";
+import { useAuthContext } from '../../../contexts/AuthContext';
+import {validateUser} from '../../../utils/validationHandler';
 
 
 function Register () {

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getMyPostsById } from "../../services/postServices";
+import { getMyPostsById } from "../../../services/postServices";
 import PostItem from '../PostItem/PostItem';
 
-import { useAuthContext} from '../../contexts/AuthContext';
+import { useAuthContext} from '../../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 
 function MyPosts() {

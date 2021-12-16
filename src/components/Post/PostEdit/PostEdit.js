@@ -2,10 +2,10 @@ import {useHistory, useRouteMatch} from 'react-router-dom';
 import { useState } from 'react';
 
 import styles from './PostEdit.module.css';
-import { update } from "../../services/postServices";
-import usePostState from '../../hooks/usePostState';
-import { useAuthContext } from '../../contexts/AuthContext';
-import {validatePost} from '../../utils/validationHandler';
+import { update } from "../../../services/postServices";
+import usePostState from '../../../hooks/usePostState';
+import { useAuthContext } from '../../../contexts/AuthContext';
+import {validatePost} from '../../../utils/validationHandler';
 
 function PostEdit () {
     const history = useHistory(); 

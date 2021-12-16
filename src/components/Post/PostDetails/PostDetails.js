@@ -1,11 +1,9 @@
 import {useHistory, useRouteMatch, Link} from 'react-router-dom';
 
-import usePostState from '../../hooks/usePostState' ;
-
-import { useAuthContext } from '../../contexts/AuthContext';
 import styles from './PostDetails.module.css';
-import { deletePost, like} from '../../services/postServices';
-
+import usePostState from '../../../hooks/usePostState' ;
+import { useAuthContext } from '../../../contexts/AuthContext';
+import { deletePost, like} from '../../../services/postServices';
 
 function PostDetails() { 
   const history = useHistory();
@@ -26,16 +24,13 @@ function PostDetails() {
      })
     
     .catch(error=> console.log(error))
-       }
-
+  }
   
  const likeHandler = () => {
-  
   if (post.likes.includes(user._id)) {
-  
     console.log('You already liked this post');
-    return;
-  }
+  return;
+}
 
    like(post._id, user.accessToken)
       .then(()=> { 
@@ -46,27 +41,29 @@ function PostDetails() {
 
  }
  const ownerButtons =  <>
-            <Link to={`/edit/${post._id}`} >Edit</Link>
-            <button onClick={onDeleteHandler} >Delete</button>
+            <Link to={`/edit/${post._id}`}  className={styles.edit} >Edit</Link>
+            <button className={styles.delete} onClick={onDeleteHandler} >Delete</button>
          </>
        
      return (
 
-        <section className="post-details">
+        <section className={styles['post-details']}>
             <h1>{post.title}</h1>
-            <p className={styles['region']}>{post.region}</p>
+            <article className={styles.details}>
+            <p className={styles.region}>{post.region}</p>
+            <p className={styles.likes}>{post.likes?.length} likes</p>
+            </article>
             <article  className={styles['container-image']}>
               <img className={styles['image']} src={post.imageUrl} alt=""/>
             </article>
-            <article>
+            <article className={styles['container-text']}>
               {post.description}
             </article>
-            <span>{post.likes?.length} likes</span>
-            
+                  
                  {isOwner 
                        ? ownerButtons
                         : <>  { user.username 
-                                ? <button onClick={likeHandler}>Like</button>
+                                ?  <button onClick={likeHandler}  className={styles.like}>Like</button>
                                : <></>
                                }
                          </>  

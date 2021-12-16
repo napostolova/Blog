@@ -1,0 +1,36 @@
+** {
+  box-sizing: border-box;
+}
+.container-post {
+  margin: 70px auto; 
+  width: 30vw;
+  height: 40vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.container-image {
+  width: 400px;
+  margin: 0 auto;
+
+}
+ .image {
+     max-width: 100%;
+ }
+ .region {
+   font-style: italic;
+   text-transform: capitalize ;
+   text-align: left;
+   padding-left: 20px;
+
+ }
+
+ .link{
+   text-decoration: none;
+   color: white;
+   padding: 10px 15px;
+   background-color: green;
+   border-radius: 10px;
+ }

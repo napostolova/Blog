@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom"
 
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../../contexts/AuthContext";
 
-import * as userService from '../../services/userServices';
+import * as userService from '../../../services/userServices';
 
 const Logout = () => {
     const history= useHistory();

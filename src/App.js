@@ -5,14 +5,14 @@ import './App.css';
 
 import Footer  from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Posts from './components/Posts/Posts';
-import Login from './components/Login/Login';
-import PostCreate from './components/PostCreate/PostCreate';
-import Register from './components/Register/Register';
-import PostDetails from './components/PostDetails/PostDetails';
-import PostEdit from './components/PostEdit/PostEdit';
-import MyPosts from './components/MyPosts/MyPosts';
-import Logout from './components/Logout/Logout';
+import Login from './components/Auth/Login/Login';
+import Register from './components/Auth/Register/Register';
+import Logout from './components/Auth/Logout/Logout';
+import Posts from './components/Post/Posts/Posts';
+import PostCreate from './components/Post/PostCreate/PostCreate';
+import PostDetails from './components/Post/PostDetails/PostDetails';
+import PostEdit from './components/Post/PostEdit/PostEdit';
+import MyPosts from './components/Post/MyPosts/MyPosts';
 import Guard from './hoc/guard';
 
 function App() { 

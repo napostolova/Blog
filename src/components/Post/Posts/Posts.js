@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { getAll } from "../../services/postServices";
+import { getAll } from "../../../services/postServices";
 
 import PostItem  from "../PostItem/PostItem";
+import styles from './Posts.module.css';
 
 function Posts() {
 
@@ -17,7 +18,7 @@ function Posts() {
     
     return (
 
-        <section className="catalog-page">
+        <section className={styles["catalog-page"]}>
             <h1>All Posts</h1>
 
             {posts.length > 0

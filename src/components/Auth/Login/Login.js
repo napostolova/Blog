@@ -1,9 +1,9 @@
 import {Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../../contexts/AuthContext';
 import styles from './Login.module.css';
-import * as userService from "../../services/userServices";
-import {validateUser} from '../../utils/validationHandler';
+import * as userService from "../../../services/userServices";
+import {validateUser} from '../../../utils/validationHandler';
 
 
  function Login () {
