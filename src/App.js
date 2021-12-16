@@ -14,6 +14,7 @@ import PostDetails from './components/Post/PostDetails/PostDetails';
 import PostEdit from './components/Post/PostEdit/PostEdit';
 import MyPosts from './components/Post/MyPosts/MyPosts';
 import Guard from './hoc/guard';
+import Home from './components/Home/Home';
 
 function App() { 
   
@@ -24,7 +25,8 @@ function App() {
       <Header />
       
           <Switch>
-           <Route path="/" exact component={Posts}/>
+           <Route path="/" exact component={Home}/>
+           <Route path="/posts" exact component={Posts}/>
           <Route path="/register" component={Register}/>
           <Route path="/login" component={Login}/>
           <Route path="/logout" component={Logout}/>

@@ -69,7 +69,6 @@ function PostDetails() {
                          </>  
                  }
           </section>
-
     )
 }
 

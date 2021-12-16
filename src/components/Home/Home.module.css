@@ -1,0 +1,19 @@
+.home-page{
+    margin: 50px auto;
+}
+.heading {
+    font-size: 32px;
+    font-style: italic;
+    color: green;
+}
+.text {
+    color: black;
+    font-size: 18px;
+}
+.container-image {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.image {
+    width: 100%;
+}

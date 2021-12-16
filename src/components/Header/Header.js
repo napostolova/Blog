@@ -13,7 +13,7 @@ function Header() {
             <span className={styles['welcome-msg']} > Welcome, {user.username} <i className="far fa-smile"></i></span>
           </li>   
           <li className={styles['nav-item']}>
-             <Link to="/" className={styles['nav-link']}>All Posts</Link>
+             <Link to="/posts" className={styles['nav-link']}>All Posts</Link>
           </li>   
           <li className={styles['nav-item']}>
              <Link to="/create" className={styles['nav-link']}>Create Post</Link>
@@ -30,7 +30,7 @@ function Header() {
         const guestLinks = (
             <>
                    <li className={styles['nav-item']}>
-                       <Link to="/" className={styles['nav-link']}>All Posts</Link>
+                       <Link to="/posts" className={styles['nav-link']}>All Posts</Link>
                    </li>   
                    <li className={styles['nav-item']}>
                        <Link to="/login" className={styles['nav-link']}>Login</Link>
@@ -44,7 +44,7 @@ function Header() {
         return(
         <section className={styles.container}>
             <article className={styles.logo}>
-            <Link className={styles.logo} to="/"><h2>Travel Blog<em>.</em></h2></Link>
+            <Link className={styles.logo} to="/"><h2 className={styles['logo-text']}>Let's travel</h2></Link>
             </article>
            <nav className={styles['navbar']}>
                <ul className={styles['navigation-list']}>
