@@ -1,0 +1,25 @@
+
+.face{
+    font-size: 120px;
+    color: green;
+    margin: 100px auto;
+}
+.text {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 0 100px 0;
+}
+.link {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: green;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 15px;
+ 
+}
+.link-home {
+    margin-bottom: 280px;
+}

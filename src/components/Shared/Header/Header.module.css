@@ -5,6 +5,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background: #5fbf5f;
     
 }
 .logo-text{
@@ -13,7 +14,7 @@
     font-size: 28px;
 }
 .logo {
-    color: #00aeff;
+    color: rgb(43, 57, 245);
     list-style-type: none;
     text-decoration: none;
 }
@@ -43,7 +44,7 @@
 
 .nav-link:hover {
     cursor: pointer;
-    color: rgb(35, 99, 35);
+    color: white
 }
 
 .welcome-msg {

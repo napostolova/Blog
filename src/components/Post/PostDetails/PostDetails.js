@@ -28,7 +28,7 @@ function PostDetails() {
   
  const likeHandler = () => {
   if (post.likes.includes(user._id)) {
-    console.log('You already liked this post');
+    alert('You already liked this post');
   return;
 }
 
@@ -48,7 +48,7 @@ function PostDetails() {
      return (
 
         <section className={styles['post-details']}>
-            <h1>{post.title}</h1>
+            <h1 className={styles.title}>{post.title}</h1>
             <article className={styles.details}>
             <p className={styles.region}>{post.region}</p>
             <p className={styles.likes}>{post.likes?.length} likes</p>

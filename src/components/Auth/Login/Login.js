@@ -27,7 +27,7 @@ const onLoginHandler = (e) => {
     userService.login(email, password)
        .then((data) => {
            login(data);
-        history.push('/');
+        history.push('/posts');
     })
         .catch(error =>
             setError({name: 'invalid form', message: 'Email or password is invalid'})

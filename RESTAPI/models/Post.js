@@ -30,10 +30,6 @@ const postSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "User"
     }],
-    comments: [{
-        type: ObjectId,
-        ref: "User"
-    }],
     ownerId: {
         type: ObjectId,
         ref: "User"

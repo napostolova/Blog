@@ -9,6 +9,8 @@ export const validatePost = (v) => {
       if(v.value === '' || v.value.length < 10 ) {
        name = v.name;
        message = 'The title must contain at least 10 latin letters';
+    }  else {
+        message= '';
     }
   }
 
@@ -16,6 +18,8 @@ export const validatePost = (v) => {
         if (v.value === '' || v.value.length < 10 ) {
         name = v.name;
         message= 'The description must contain at least 10 latin letters';
+        }  else {
+            message= '';
         }
     }
 
@@ -24,7 +28,9 @@ export const validatePost = (v) => {
         if (v.value === '' || v.value.length < 10  || !isValid) {
             name = v.name;
             message= 'The image address must begin with http(s)://'; 
-        } 
+        }  else {
+            message= '';
+        }
     }
 
     return [
@@ -40,7 +46,9 @@ export const validateUser = (v) => {
         if(v.value === '' || !isValid)  {
          name = v.name;
          message = 'Please insert a valid email';
-      }
+      }  else {
+        message= '';
+    }
     }
 
     if (v.name === 'password' || v === 'password' ) {

@@ -50,12 +50,15 @@ router.put('/:id', isAuth(), preload(), isOwner(), async (req, res) => {
         imageUrl: req.body.imageUrl,  
         region: req.body.region,  
      }
+     console.log(updatedData);
     try {
         const result = await update(req.data, updatedData);
 
         res.status(200).json(result);
     } catch (error) {
         const message = parseError(error);
+        console.log(error);
+        console.log(message);
         res.status(error.status || 400).json({message});
 
     }
