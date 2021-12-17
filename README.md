@@ -16,7 +16,7 @@ This blog is a web application using **React.js**. For back-end are used **Node.
  - React JS
  - Node.js
  - Express.js
- - MongoDB
+ - MongoDB Atlas
  - Mongoose
  - JWT
  - bcrypt
