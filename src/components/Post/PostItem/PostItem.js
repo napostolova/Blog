@@ -13,7 +13,7 @@ function PostItem({
               <img className={styles['image']}src={post.imageUrl} alt="" />
             </article>
             <p className={styles['region']}>{post.region}</p>
-         <Link to={`/details/${post._id}`} className={styles.link}>Read more</Link>
+         <Link to={`/details/${post._id}`} className={styles.link}>Details</Link>
         </section>
 
     )

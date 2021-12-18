@@ -35,7 +35,7 @@ const onRegisterHandler = (e) => {
     register(data)
         .then(data => {
         login(data);        
-        history.push('/');
+        history.push('/posts');
     })
     .catch((error) =>
     setError({name: 'invalid form', message: 'This email is already registered'}) 

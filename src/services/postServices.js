@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:4000';
+const apiUrl = 'https://softuni-blog-server.herokuapp.com';
 
 export async function create(data, token) {
     let response = await fetch(`${apiUrl}/api/posts`, {

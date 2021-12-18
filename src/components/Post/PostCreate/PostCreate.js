@@ -33,7 +33,7 @@ function PostCreate () {
   
     create(data, user.accessToken)  
         .then(result => {               
-        history.push('/');      
+        history.push('/posts');      
     })
     .catch((error) => {
         let message = error.join('. \n');            

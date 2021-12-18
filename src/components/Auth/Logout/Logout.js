@@ -16,7 +16,7 @@ const Logout = () => {
             logout();
             history.push('/');
         })
-    }, [])
+    })
 
     return null;
 }

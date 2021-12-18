@@ -7,7 +7,7 @@ function Home() {
             <article>
              <p className={styles.text}>Here you can read ideas for travels. Create your registration and share your amazing journeys from all the world.</p>
             <article className={styles['container-image']} >
-            <img className={styles.image} src='/assets/world.jpeg' />
+            <img className={styles.image} src='/assets/world.jpeg' alt="world-img"/>
             </article> 
             </article> 
 

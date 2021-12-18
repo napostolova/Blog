@@ -7,26 +7,28 @@ import styles from './Posts.module.css';
 function Posts() {
 
     const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(Boolean);
 
     useEffect(() => {
+        setLoading(true)
         getAll()
         .then( result => {
+            setLoading(false)
             setPosts(result)
         })
         .catch(error => console.log(error))
     }, [])
-    
+
+    let loader = <p>Loading... </p>;
     return (
-
-        <section className={styles["catalog-page"]}>
-            <h1>All Posts</h1>
-
-            {posts.length > 0
+            <section className={styles["catalog-page"]}>
+           
+            { posts.length > 0
             ? posts.map(p => <PostItem key={p._id} post={p}></PostItem>)
-            : <h3 className="no-articles">No posts yet</h3>
-        }
-
+            : loading ? loader : <h3 className="no-articles">No posts yet</h3>
+              }
         </section>
+      
 
     )
 }

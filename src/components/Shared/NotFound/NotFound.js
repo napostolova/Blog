@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import  styles from './NotFound.module.css';
 
-function Footer() {
+function NotFound() {
     return (
         <section className={styles['not-found']}>
          <article className={styles['no-content']}>
@@ -18,4 +18,4 @@ function Footer() {
         </section>
     )
 }
-export default Footer;
+export default NotFound;
