@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30vw;
+    width: 40vw;
     height: 80vh;
     margin: 50px auto;
     border: 1px solid gray;
@@ -11,15 +11,15 @@
 
 .create-form {
     display: flex;
-    width: 25vw;
-    height: 75vh;
+    width: 35vw;
+    height: 90vh;
     flex-direction: column;
     margin: 50px auto;
 }
 
 .submit{
      border-radius: 5px;
-     margin: 25px 5px;
+     margin: 20px 5px;
      padding: 15px 0px;
      border-radius: 10px;
      font-size: 18px;
@@ -28,7 +28,7 @@
      letter-spacing: 1px;
      text-align: center;
      font-weight: 600;
-     text-transform: uppercase;
+     text-transform: uppercase;    
 
 }
 .submit:hover {
@@ -57,4 +57,14 @@
     font-size: 18px;
     color: rgb(248, 27, 27);
     font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+    .create-page {
+        width: 80vw;
+    }
+    .create-form {
+        width: 70vw;
+    }
+
 }

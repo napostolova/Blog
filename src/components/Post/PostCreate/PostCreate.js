@@ -48,7 +48,7 @@ function PostCreate () {
 
   return (
         <section className={styles['create-page']}>
-            <form id="createForm"  className={styles['create-form']}onSubmit={onCreateHandler}>
+            <form id="createForm"  className={styles['create-form']} onSubmit={onCreateHandler}>
             <div className={styles['create-form']}>
             {error.name === 'invalid form' ? <p className={styles['invalid-form']}>{error.message}</p> : ''}
                 <div className="brand-logo"></div>

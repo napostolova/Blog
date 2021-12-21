@@ -4,14 +4,15 @@
 .register-page {
     display: flex;
     background:white;
-    width: 30vw;
-    height: 70vh;
-    margin: 50px auto;
+    width: 40vw;
+    height: 80vh;
+    margin: 100px auto;
     border: 1px solid gray;
     border-radius: 20px;
 }
 .register-form {
     display: flex;
+    width: 30vw;
     flex-direction: column;
     margin: 50px auto;
 }
@@ -27,7 +28,7 @@
 }
 .submit{
     margin: 40px;
-    padding:  15px 100px;
+    padding:  15px 50px;
     border-radius: 10px;
     font-size: 18px;
     background-color:green;
@@ -36,6 +37,8 @@
     text-align: center;
     font-weight: 600;
     text-transform: uppercase;
+    align-self: center;
+    width: 25vw;
 }
 .submit:hover {
     cursor: pointer;
@@ -61,3 +64,28 @@
     font-weight: 600;
     text-decoration: none;
    }
+
+
+   @media screen and (max-width: 600px) {
+    .register-page {
+        width: 60vw;
+        height: 70vh;
+    }
+
+    .register-form {
+        display: flex;
+        width: 50vw;
+        height: 65vh;
+        flex-direction: column;
+        margin: 30px auto;
+    }
+
+    .submit {
+        width: 40vw;
+        margin: 10px;
+        padding: 10px;
+        align-self: center;
+       
+    }
+}
+    

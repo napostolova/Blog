@@ -23,7 +23,38 @@
 }
 
 .social-items {
-list-style-type: none;
-color: white;
-margin: 0 15px;
+     list-style-type: none;
+     color: white;
+     margin: 0 15px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .footer{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        max-width: 100vw;
+    }
+   
+    .social-items {
+         margin: 0 10px;
+   }
+
+}
+
+@media screen and (max-width: 400px) {
+    .footer{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 20vh;
+    }
+   
+    .social-items {
+         margin: 0 10px;
+   }
+
 }
