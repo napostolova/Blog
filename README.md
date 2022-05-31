@@ -9,23 +9,22 @@ My project in React course at SoftUni.
   1. *Public part* 
        - Guests can:
                    
-                   - visit home page
-                 
-                -    register
-               -   login
-               -   view all posts
-               -   view a single post's details
+               -   visit home page
+               -   register: /register
+               -   login: /login
+               -   view all posts: /posts
+               -   view a single post's details: /details/:id
                
   
   2. *Private part*
        - Logged users can:
        
-                -   create posts
+                -   create posts: /create
                 -   like posts
-                -   view your own posts. 
+                -   view your own posts: /my-posts 
        - The author of post can:
        
-                -   can edit post
+                -   can edit post: /edit/:id
                 -   delete it
               
    
