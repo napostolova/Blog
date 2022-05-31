@@ -1,6 +1,6 @@
-# Blog system 
+# Travel Blog 
 
-This blog is a web application using **React.js**. For back-end are used **Node.js**, **Express.js** and **MongoDB**. The application is deployed at firebase  <https://blog-posts-d801f.web.app/>
+This blog system  is a web application using **React.js**. For back-end are used **Node.js**, **Express.js** and **MongoDB**. The application is deployed at firebase  <https://blog-posts-d801f.web.app/>
 
 ## Application structure
  
