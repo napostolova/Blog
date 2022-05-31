@@ -5,10 +5,11 @@ This blog system is a web application for sharing interesting journey ideas.
 My project in React course at SoftUni. 
 
 ## Application structure
- 
+ The application is composed of two parts:
   1. *Public part* 
        - Guests can:
-                -    visit home page
+                   - visit home page
+                 
                 -    register
                -   login
                -   view all posts
