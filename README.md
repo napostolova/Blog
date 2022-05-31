@@ -8,8 +8,8 @@ My project in React course at SoftUni.
  
   1. *Public part* 
        - Guests can:
-               -   visit home page
-               -   register
+                -    visit home page
+                -    register
                -   login
                -   view all posts
                -   view a single post's details
