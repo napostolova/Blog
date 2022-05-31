@@ -6,7 +6,7 @@ My project in React course at SoftUni.
 
 ## Application structure
  
-  - *Public part* 
+  1. *Public part* 
        - Guests can:
                -  visit home page
                -  register
@@ -15,7 +15,7 @@ My project in React course at SoftUni.
                -  view a single post's details
                
   
-  - *Private part*
+  2. *Private part*
        - Logged users can:
                 -  create posts
                 -  like posts
