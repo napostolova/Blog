@@ -1,15 +1,30 @@
 # Travel Blog 
 
-This blog system is a web application for sharing interseting journey ideas.
+This blog system is a web application for sharing interesting journey ideas.
 
 My project in React course at SoftUni. 
 
 ## Application structure
  
-  - *Public part* - includes home, catalog, login and register pages. Guest can see details, cannot like posts.
+  - *Public part* 
+       - Guests can:
+               -  visit home page
+               -  register
+               -  login
+               -  view all posts
+               -  view a single post's details
+               
   
-  - *Private part* - logged in users can create and like posts, view your own posts. If logged in users are authors on some post, they can edit or delete it.
-  
+  - *Private part*
+       - Logged users can:
+                -  create posts
+                -  like posts
+                -  view your own posts. 
+       - The author of post can:
+                -  can edit post
+                -  delete it
+              
+   
   
 ## Used tehchnologies 
  - React
