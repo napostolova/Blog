@@ -8,6 +8,7 @@ My project in React course at SoftUni.
  The application is composed of two parts:
   1. *Public part* 
        - Guests can:
+                   
                    - visit home page
                  
                 -    register
@@ -18,10 +19,12 @@ My project in React course at SoftUni.
   
   2. *Private part*
        - Logged users can:
+       
                 -   create posts
                 -   like posts
                 -   view your own posts. 
        - The author of post can:
+       
                 -   can edit post
                 -   delete it
               
