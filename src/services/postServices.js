@@ -1,4 +1,4 @@
-const apiUrl = 'https://softuni-blog-server.herokuapp.com';
+const apiUrl = 'https://blog-service.onrender.com';
 
 export async function create(data, token) {
     let response = await fetch(`${apiUrl}/api/posts`, {
